@@ -1,0 +1,19 @@
+<template name = "layout">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Examenes en NoSQL</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {{#if(currentUser)}}
+                <li><a href="login">Admin</a></li>
+                {{else}}
+                <li><a id = "logout">Logout</a></li>
+                {{/if}}
+
+                <li><a href="home">Nuevo Examen</a></li>
+                <!--<li><a href="#" id="add_user"> add user</a></li>-->
+            </ul>
+        </div>
+    </nav>
+
+
+</template>
