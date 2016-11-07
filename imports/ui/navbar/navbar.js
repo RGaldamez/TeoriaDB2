@@ -1,11 +1,11 @@
-import "./layout.html"
+import "./navbar.html"
 
 
-Template.layout.events({
+Template.navbar.events({
     'click #logout' (event){
         Meteor.logout();
         Router.go('/');
     }
 
 
-});
+}); 

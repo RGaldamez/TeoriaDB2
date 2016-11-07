@@ -4,13 +4,8 @@ import "../ui/frontpage/frontpage.js";
 import "../ui/home/home.js";
 import "../ui/homeAdmin/homeAdmin.js";
 import "../ui/login/login.js";
-import "../ui/layout/layout.js";
+import "../ui/navbar/navbar.js";
 
-
-Router.configure({
-    layoutTemplate:"layout"
-
-});
 
 Router.route('/', function(){
     this.render("frontpage");
