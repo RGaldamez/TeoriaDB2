@@ -7,7 +7,7 @@ Schema.verdadero = new SimpleSchema({
 pregunta: {
     type: String
 },
-Respuesta: {
+respuesta: {
     type: Boolean
 }
 

@@ -20,8 +20,8 @@ Schema.seleccion = new SimpleSchema({
     opcion4:{
         type: String
     },
-    Respuesta:{
-        type: String
+    respuesta:{
+        type: Number
     }
 
 });

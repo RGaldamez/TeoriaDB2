@@ -1,18 +1,20 @@
 <template name = "homeAdmin">
 {{>navbar}}
 <br><br><br><br>
-
-    <h3>Verdadero/Falso</h3>
+    <div class="container">
+        <h4 class="teal-text text-darken-1">Verdadero/Falso</h4>
+    </div>
+    
     <div class="row">
         <div class="container">
-            <div class="col s10 m10 l10">
+            <div class="col s12 m12 l12">
                 <input type="text" id ="PreguntaVerdadero" placeholder="Pregunta"> 
             </div>
             <br><br><br>
-            <div class="col s5 m5 l5" >
+            <div class="col s2 m2 l2" >
                 <a class="waves-effect waves-light btn" id= "addVerdadero">Verdadero</a>  
             </div>
-            <div class="col s5 m5 l5" >
+            <div class="col s2 m2 l2" >
                 <a class="waves-effect waves-light btn" id= "addFalso">Falso</a>  
             </div>
         
@@ -20,11 +22,40 @@
     </div>
 
     <br><br><br><br>
-
-    <h3>Seleccion Unica</h3>
+    <div class="container">
+        <h4 class="teal-text text-darken-1">Seleccion Unica</h4>
+    </div>
+    
     <div class="row">
         <div class="container">
-
+            <div class="col s12 m12 l12">
+                <input type="text" id ="seleccionPregunta" placeholder="Pregunta">
+            </div>
+            <div class="col s10 m6 l6">
+                <input type="text" id ="seleccionOpcion1" placeholder="Opcion 1">
+            </div>
+            <div class="col s10 m6 l6">
+                <input type="text" id ="seleccionOpcion2" placeholder="Opcion 2">
+            </div>
+            <div class="col s10 m6 l6">
+                <input type="text" id ="seleccionOpcion3" placeholder="Opcion 3">
+            </div>
+            <div class="col s10 m6 l6">
+                <input type="text" id ="seleccionOpcion4" placeholder="Opcion 4">
+            </div>    
         </div>
     </div>
+    <div class="container">
+        <div class="input-field col s12">
+                <select id="opcionCorrecta">
+                     <option value="" disabled selected >Escoja su opcion correcta</option>
+                     <option value=1>Opcion 1</option>
+                     <option value=2>Opcion 2</option>
+                     <option value=3>Opcion 3</option>
+                     <option value=4>Opcion 4</option>
+                </select>
+        </div>
+        <a class="waves-effect waves-light btn" id= "agregarSeleccion">Agregar Pregunta</a>  
+    </div>
+    <br><br><br><br><br>
 </template>
