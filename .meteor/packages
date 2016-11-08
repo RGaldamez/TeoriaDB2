@@ -25,3 +25,5 @@ fourseven:scss
 iron:router
 materialize:materialize@=0.97.0
 accounts-password
+flyandi:reactive-countdown
+random
