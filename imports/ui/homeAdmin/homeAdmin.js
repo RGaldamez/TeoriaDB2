@@ -36,7 +36,7 @@ Template.homeAdmin.events({
        });
        event.preventDefault();
        $("#PreguntaVerdadero").val("");
-       Materialize.toast('Pregunta Agregada (True)');
+       Materialize.toast('Pregunta Agregada (True)',2000);
        
     },
     'click #addFalso'(event){
@@ -46,7 +46,7 @@ Template.homeAdmin.events({
         });
         event.preventDefault();
         $("#PreguntaVerdadero").val("");
-        Materialize.toast('Pregunta Agregada (False)');
+        Materialize.toast('Pregunta Agregada (False)',2000);
         
     },
     'click #agregarSeleccion'(event){
@@ -58,7 +58,7 @@ Template.homeAdmin.events({
             opcion4:$("#seleccionOpcion4").val(),
             respuesta: Template.instance().answer.get()
         });
-        alert(Template.instance().answer.get()); 
+        Materialize.toast("Pregunta Agregada",2000);
         event.preventDefault();
         $("#seleccionPregunta").val("");
         $("#seleccionOpcion1").val("");
