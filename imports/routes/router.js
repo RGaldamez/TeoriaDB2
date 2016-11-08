@@ -1,7 +1,7 @@
 import {Router} from "meteor/iron:router";
 
 import "../ui/frontpage/frontpage.js";
-import "../ui/home/home.js";
+import "../ui/examen/examen.js";
 import "../ui/homeAdmin/homeAdmin.js";
 import "../ui/login/login.js";
 import "../ui/navbar/navbar.js";
@@ -11,8 +11,8 @@ Router.route('/', function(){
     this.render("frontpage");
 });
 
-Router.route('home',function(){
-    this.render("home");
+Router.route('examen',function(){
+    this.render("examen");
 });
 
 Router.route('homeAdmin', function(){
