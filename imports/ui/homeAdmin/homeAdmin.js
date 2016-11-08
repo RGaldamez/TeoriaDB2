@@ -21,6 +21,24 @@ Template.homeAdmin.onRendered(function(){
 
 });
 
+/*Template.homeAdmin.helpers({
+    emptyV:function(){
+        if(Verdaderos.count() == 0){
+            return 0;
+        }else{
+            return Verdaderos.count() -1;
+        }
+    },
+    emptyS:function(){
+        if(Selecciones.count() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+});
+*/
+
 
 Template.homeAdmin.events({
     "change #opcionCorrecta": function (event, template) {
@@ -32,7 +50,8 @@ Template.homeAdmin.events({
     'click #addVerdadero'(event){
        Verdaderos.insert({
            pregunta: $("#PreguntaVerdadero").val(),
-           respuesta: true
+           respuesta: true,
+           index:Verdaderos.count()
        });
        event.preventDefault();
        $("#PreguntaVerdadero").val("");
@@ -42,7 +61,9 @@ Template.homeAdmin.events({
     'click #addFalso'(event){
         Verdaderos.insert({
             pregunta: $("#PreguntaVerdadero"),
-            respuesta: false
+            respuesta: false,
+            index: Verdaderos.count()
+
         });
         event.preventDefault();
         $("#PreguntaVerdadero").val("");
@@ -56,7 +77,8 @@ Template.homeAdmin.events({
             opcion2:$("#seleccionOpcion2").val(),
             opcion3:$("#seleccionOpcion3").val(),
             opcion4:$("#seleccionOpcion4").val(),
-            respuesta: Template.instance().answer.get()
+            respuesta: Template.instance().answer.get(),
+            index: Selecciones.count()
         });
         Materialize.toast("Pregunta Agregada",2000);
         event.preventDefault();

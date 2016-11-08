@@ -22,6 +22,9 @@ Schema.seleccion = new SimpleSchema({
     },
     respuesta:{
         type: Number
+    },
+    index:{
+        type: Number
     }
 
 });
