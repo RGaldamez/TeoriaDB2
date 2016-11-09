@@ -60,7 +60,7 @@ Template.examen.helpers({
         //var array = myDocument.split();
         //alert(array[1]);
         var myDocument = Selecciones.find().fetch()[random];
-        alert(console.log(myDocument.respuesta));
+        console.log(myDocument.respuesta);
         
         Template.instance().posSeleccion = Template.instance().posSeleccion+1;
         //alert(Template.instance().posSeleccion);
