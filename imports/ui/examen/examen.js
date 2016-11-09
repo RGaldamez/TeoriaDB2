@@ -208,49 +208,49 @@ Template.examen.events({
 
         var grades = 0;
 
-        if( parseInt(a1) == Template.instance().answersSeleccion1 ){
+        if( parseInt(a1) == Template.instance().answersSeleccion1 && a1 !=undefined ){
             grades = grades + 1;
             
         }
-        if(parseInt(a2) == Template.instance().answersSeleccion2 ){
+        if(parseInt(a2) == Template.instance().answersSeleccion2 && a2 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a3) == Template.instance().answersSeleccion3 ){
+        if(parseInt(a3) == Template.instance().answersSeleccion3 && a3 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a4) == Template.instance().answersSeleccion4 ){
+        if(parseInt(a4) == Template.instance().answersSeleccion4 && a4 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a5) == Template.instance().answersSeleccion5 ){
+        if(parseInt(a5) == Template.instance().answersSeleccion5 && a5 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a6) == Template.instance().answersVerdaderos1 ){
+        if(parseInt(a6) == Template.instance().answersVerdaderos1 && a6 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a7) == Template.instance().answersVerdaderos2 ){
+        if(parseInt(a7) == Template.instance().answersVerdaderos2 && a7 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a8) == Template.instance().answersVerdaderos3 ){
+        if(parseInt(a8) == Template.instance().answersVerdaderos3 && a8 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a9) == Template.instance().answersVerdaderos4 ){
+        if(parseInt(a9) == Template.instance().answersVerdaderos4 && a9 !=undefined){
             grades = grades + 1;
             
         }
-        if(parseInt(a10) == Template.instance().answersVerdaderos5 ){
+        if(parseInt(a10) == Template.instance().answersVerdaderos5 && a10 !=undefined){
             grades = grades + 1;
             
         }
         var nombre = $("#nombreEstudiante").val();
-        alert("nombre" + nombre);
-        alert("grades"+ grades);
+        alert("Nombre: " + nombre);
+        alert("Nota: "+ grades);
 
         /*Meteor.call("insertEstudiante", {nombre,grades},function(err,res){
             if(err){

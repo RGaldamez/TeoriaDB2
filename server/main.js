@@ -5,9 +5,9 @@ import { Estudiantes } from '../imports/api/estudiante.js';
 
 Meteor.startup(() => {
   // code to run on server at startup
-  //Selecciones.remove({});
-  //Verdaderos.remove({});
-  //Estudiantes.remove({});
+  Selecciones.remove({});
+  Verdaderos.remove({});
+  Estudiantes.remove({});
   Meteor.publish("Verdaderos", function(){
     return Verdaderos.find({});
   });
