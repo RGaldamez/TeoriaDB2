@@ -59,9 +59,12 @@ Template.examen.helpers({
 
         //var array = myDocument.split();
         //alert(array[1]);
-        var myDocument = Selecciones.find().fetch()[random];
-        console.log(myDocument.respuesta);
-        
+        try {
+            var myDocument = Selecciones.find().fetch()[random];
+            console.log(myDocument.respuesta);    
+        } catch (TypeError) {
+            
+        }
         Template.instance().posSeleccion = Template.instance().posSeleccion+1;
         //alert(Template.instance().posSeleccion);
 
