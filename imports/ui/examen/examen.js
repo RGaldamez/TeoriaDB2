@@ -52,7 +52,7 @@ Template.examen.helpers({
     },
 
     preguntaSeleccion1: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion1=Doc.respuesta; 
@@ -61,12 +61,12 @@ Template.examen.helpers({
             
         }
         
-        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+        
 
         return Selecciones.find({index:random});
     },
     preguntaSeleccion2: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion2=Doc.respuesta; 
@@ -75,12 +75,12 @@ Template.examen.helpers({
             
         }
         
-        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+        
 
         return Selecciones.find({index:random});
     },
     preguntaSeleccion3: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion3=Doc.respuesta; 
@@ -89,12 +89,12 @@ Template.examen.helpers({
             
         }
         
-        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+        
 
         return Selecciones.find({index:random});
     },
     preguntaSeleccion4: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion4=Doc.respuesta; 
@@ -103,12 +103,12 @@ Template.examen.helpers({
             
         }
         
-        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+        
 
         return Selecciones.find({index:random});
     },
     preguntaSeleccion5: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion5=Doc.respuesta; 
@@ -117,13 +117,13 @@ Template.examen.helpers({
             
         }
         
-        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+        
 
         return Selecciones.find({index:random});
     },
     
     preguntaVerdadero1: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos1 = Doc.respuesta;   
@@ -134,7 +134,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero2: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos2 = Doc.respuesta;   
@@ -144,7 +144,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero3: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos3 = Doc.respuesta;   
@@ -154,7 +154,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero4: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos4 = Doc.respuesta;   
@@ -164,7 +164,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero5: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos5 = Doc.respuesta;   
@@ -206,40 +206,57 @@ Template.examen.events({
         var a9 =$('input:radio[name="group9"]:checked').val();
         var a10 =$('input:radio[name="group10"]:checked').val();
 
+        alert("nota actual" + Template.instance().notaFinal);
+        var grades = 0;
 
+        if( parseInt(a1) == Template.instance().answersSeleccion1 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a2) == Template.instance().answersSeleccion2 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a3) == Template.instance().answersSeleccion3 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a4) == Template.instance().answersSeleccion4 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a5) == Template.instance().answersSeleccion5 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a6) == Template.instance().answersVerdaderos1 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a7) == Template.instance().answersVerdaderos2 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a8) == Template.instance().answersVerdaderos3 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a9) == Template.instance().answersVerdaderos4 ){
+            grades = grades + 1;
+            
+        }
+        if(parseInt(a10) == Template.instance().answersVerdaderos5 ){
+            grades = grades + 1;
+            
+        }
+        alert("NOTA"+grades);
+        var nombre = $('nombreEstudiante').val();
 
-        if(a1 == Template.instance().answersSeleccion1 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a2 == Template.instance().answersSeleccion2 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a3 == Template.instance().answersSeleccion3 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a4 == Template.instance().answersSeleccion4 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a5 == Template.instance().answersSeleccion5 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a6 == Template.instance().answersVerdaderos1 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a7 == Template.instance().answersVerdaderos2 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a8 == Template.instance().answersVerdaderos3 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a9 == Template.instance().answersVerdaderos4 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        if(a10 == Template.instance().answersVerdaderos5 ){
-            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
-        }
-        
-        
+        Meteor.call("insertEstudiante", {nombre,grades},function(err,res){
+            if(err){
+                console.log(err);
+            }
+        });
     }
 
 });

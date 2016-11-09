@@ -5,10 +5,10 @@ let Schema = {};
 
 Schema.estudiante = new SimpleSchema({
 
-    Nombre: {
+    nombre: {
         type: String
     },
-    Nota:{
+    nota:{
         type: Number
     }
 
