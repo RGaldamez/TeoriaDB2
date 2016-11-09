@@ -52,7 +52,7 @@ Template.examen.helpers({
     },
 
     preguntaSeleccion1: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion1=Doc.respuesta; 
@@ -66,7 +66,7 @@ Template.examen.helpers({
         return Selecciones.find({index:random});
     },
     preguntaSeleccion2: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion2=Doc.respuesta; 
@@ -80,7 +80,7 @@ Template.examen.helpers({
         return Selecciones.find({index:random});
     },
     preguntaSeleccion3: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion3=Doc.respuesta; 
@@ -94,7 +94,7 @@ Template.examen.helpers({
         return Selecciones.find({index:random});
     },
     preguntaSeleccion4: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion4=Doc.respuesta; 
@@ -108,7 +108,7 @@ Template.examen.helpers({
         return Selecciones.find({index:random});
     },
     preguntaSeleccion5: function(){        
-        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
         try {
             var Doc = Selecciones.find().fetch()[random];
             Template.instance().answersSeleccion5=Doc.respuesta; 
@@ -123,7 +123,7 @@ Template.examen.helpers({
     },
     
     preguntaVerdadero1: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos1 = Doc.respuesta;   
@@ -134,7 +134,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero2: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos2 = Doc.respuesta;   
@@ -144,7 +144,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero3: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos3 = Doc.respuesta;   
@@ -154,7 +154,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero4: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos4 = Doc.respuesta;   
@@ -164,7 +164,7 @@ Template.examen.helpers({
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero5: function(){
-        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+2));
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos5 = Doc.respuesta;   
@@ -206,7 +206,6 @@ Template.examen.events({
         var a9 =$('input:radio[name="group9"]:checked').val();
         var a10 =$('input:radio[name="group10"]:checked').val();
 
-        alert("nota actual" + Template.instance().notaFinal);
         var grades = 0;
 
         if( parseInt(a1) == Template.instance().answersSeleccion1 ){
@@ -249,7 +248,6 @@ Template.examen.events({
             grades = grades + 1;
             
         }
-        alert("NOTA"+grades);
         var nombre = $('nombreEstudiante').val();
 
         Meteor.call("insertEstudiante", {nombre,grades},function(err,res){
