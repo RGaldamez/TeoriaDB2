@@ -29,6 +29,11 @@ Meteor.startup(() => {
     }
   });
 
+Estudiantes.allow({
+    insert:function(userId,doc){
+        return true;
+    },
+});
 
   
 });

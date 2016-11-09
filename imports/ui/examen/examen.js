@@ -248,13 +248,16 @@ Template.examen.events({
             grades = grades + 1;
             
         }
-        var nombre = $('nombreEstudiante').val();
+        var nombre = $("#nombreEstudiante").val();
+        alert("nombre" + nombre);
+        alert("grades"+ grades);
 
-        Meteor.call("insertEstudiante", {nombre,grades},function(err,res){
+        /*Meteor.call("insertEstudiante", {nombre,grades},function(err,res){
             if(err){
                 console.log(err);
             }
-        });
+        });*/
+        Estudiantes.insert({nombre,grades});
     }
 
 });

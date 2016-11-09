@@ -5,6 +5,7 @@ import "../ui/examen/examen.js";
 import "../ui/homeAdmin/homeAdmin.js";
 import "../ui/login/login.js";
 import "../ui/navbar/navbar.js";
+import "../ui/nota/nota.js";
 
 
 Router.route('/', function(){
@@ -21,4 +22,8 @@ Router.route('homeAdmin', function(){
 
 Router.route('login', function(){
     this.render("login");
-})
+});
+
+Router.route('nota', function(){
+    this.render("nota");
+});

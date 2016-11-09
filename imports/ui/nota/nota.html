@@ -1,0 +1,20 @@
+<template name = "nota">
+    {{>navbar}}
+<br><br>
+<div class="container">
+    <h4>Notas de Estudiantes</h4>
+</div>
+<br><br><br><br>
+    <div class="container">
+        <div class="row">
+            {{#each estudiantes}}
+            <div class="col s6 m6 l6">
+                <p>Nombre: {{nombre}}</p>
+            </div>
+            <div class="col s6 m6 l6">
+                <p>Nota: {{nota}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</template>
