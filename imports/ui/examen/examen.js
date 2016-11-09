@@ -7,10 +7,18 @@ import {Verdaderos} from "../../api/verdadero.js";
 Template.examen.onCreated(function(){
     this.posSeleccion = 0;
     this.posVerdadero = 0;
-    this.answersSeleccion = [0,0,0,0,0];
+    this.answersSeleccion1 = 0;
+    this.answersSeleccion2 = 0;
+    this.answersSeleccion3 = 0;
+    this.answersSeleccion4 = 0;
+    this.answersSeleccion5 = 0;
    // seleccionEscogida = [0,0,0,0,0,0,0,0,0,0];
     //verdaderoEscogido = [0,0,0,0,0,0,0,0,0,0];
-    this.answersVerdaderos = [false,false,false,false,false];
+    this.answersVerdaderos1 = false;
+    this.answersVerdaderos2 = false;
+    this.answersVerdaderos3 = false; 
+    this.answersVerdaderos4 = false;
+    this.answersVerdaderos5 = false;
     Meteor.subscribe("Verdaderos");
     Meteor.subscribe("Selecciones");
 
@@ -35,51 +43,112 @@ Template.examen.helpers({
         return Selecciones.count();
     },
     */
-    preguntaSeleccion: function(){
-        //var random = Math.floor( (Selecciones.find().count()-1)*Math.random());
-        //Math.random() * (max - min + 1)) + min;
+    preguntaSeleccion1: function(){        
         var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
-        
-        
-         
-        
-        //var query = Selecciones.findOne({index:random});
-        //query.select('respuesta');
-        /*query.exec(function(err,seleccion){
-            if(err)return handleError(err);
-          Template.instance().answersSeleccion[Template.instance().posSeleccion] = seleccion.respuesta;  
-        });
-        */
-
-        //Template.instance().answersSeleccion[Template.instance().posSeleccion] = Selecciones.find({index:random},{respuesta:1, _id:0});
-        //var temp  = Selecciones.find({index:random},{respuesta:1, _id:0});
-        //var temp2 = temp.toArray();
-        //var temp3 = temp2[1];
-        //alert(temp3);
-
-        //var array = myDocument.split();
-        //alert(array[1]);
         try {
-            var myDocument = Selecciones.find().fetch()[random];
-            console.log(myDocument.respuesta);    
+            var Doc = Selecciones.find().fetch()[random];
+            Template.instance().answersSeleccion1=Doc.respuesta; 
+            console.log(Doc.respuesta);    
         } catch (TypeError) {
             
         }
+        
         Template.instance().posSeleccion = Template.instance().posSeleccion+1;
-        //alert(Template.instance().posSeleccion);
 
         return Selecciones.find({index:random});
     },
-    preguntaVerdadero: function(){
-        var random = Math.floor( (Verdaderos.find().count()-1)*Math.random())
+    preguntaSeleccion2: function(){        
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        try {
+            var Doc = Selecciones.find().fetch()[random];
+            Template.instance().answersSeleccion2=Doc.respuesta; 
+            console.log(Doc.respuesta);    
+        } catch (TypeError) {
+            
+        }
         
-        //Template.instance().answersVerdaderos[Template.instance().posVerdadero] = Verdaderos.findOne( {index:random }).respuesta;
-        //Template.instance().posVerdadero = Template.instance().posVerdadero+1;
-        //return Verdaderos.findOne( {index:random });
+        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+
+        return Selecciones.find({index:random});
     },
-    changeAnswer:function(respuesta){
-        alert(respuesta);
-    }
+    preguntaSeleccion3: function(){        
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        try {
+            var Doc = Selecciones.find().fetch()[random];
+            Template.instance().answersSeleccion3=Doc.respuesta; 
+            console.log(Doc.respuesta);    
+        } catch (TypeError) {
+            
+        }
+        
+        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+
+        return Selecciones.find({index:random});
+    },
+    preguntaSeleccion4: function(){        
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        try {
+            var Doc = Selecciones.find().fetch()[random];
+            Template.instance().answersSeleccion4=Doc.respuesta; 
+            console.log(Doc.respuesta);    
+        } catch (TypeError) {
+            
+        }
+        
+        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+
+        return Selecciones.find({index:random});
+    },
+    preguntaSeleccion5: function(){        
+        var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
+        try {
+            var Doc = Selecciones.find().fetch()[random];
+            Template.instance().answersSeleccion5=Doc.respuesta; 
+            console.log(Doc.respuesta);    
+        } catch (TypeError) {
+            
+        }
+        
+        Template.instance().posSeleccion = Template.instance().posSeleccion+1;
+
+        return Selecciones.find({index:random});
+    },
+    
+    preguntaVerdadero1: function(){
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+
+        var Doc = Verdaderos.find().fetch()[random]; 
+        Template.instance().answersVerdaderos1 = Doc.respuesta;
+        return Verdaderos.find({index:random});
+    },
+    preguntaVerdadero2: function(){
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+
+        var Doc = Verdaderos.find().fetch()[random]; 
+        Template.instance().answersVerdaderos2 = Doc.respuesta;
+        return Verdaderos.find({index:random});
+    },
+    preguntaVerdadero3: function(){
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+
+        var Doc = Verdaderos.find().fetch()[random]; 
+        Template.instance().answersVerdaderos3 = Doc.respuesta;
+        return Verdaderos.find({index:random});
+    },
+    preguntaVerdadero4: function(){
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+
+        var Doc = Verdaderos.find().fetch()[random]; 
+        Template.instance().answersVerdaderos4 = Doc.respuesta;
+        return Verdaderos.find({index:random});
+    },
+    preguntaVerdadero5: function(){
+        var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
+
+        var Doc = Verdaderos.find().fetch()[random]; 
+        Template.instance().answersVerdaderos5 = Doc.respuesta;
+        return Verdaderos.find({index:random});
+    },
     /*,
 
     opcion:function(numPregunta,numOpcion){
