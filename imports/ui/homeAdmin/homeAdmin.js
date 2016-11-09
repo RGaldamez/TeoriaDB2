@@ -51,7 +51,7 @@ Template.homeAdmin.events({
        Verdaderos.insert({
            pregunta: $("#PreguntaVerdadero").val(),
            respuesta: true,
-           index:Verdaderos.count()
+           index:Verdaderos.find().count()
        });
        event.preventDefault();
        $("#PreguntaVerdadero").val("");
@@ -62,7 +62,7 @@ Template.homeAdmin.events({
         Verdaderos.insert({
             pregunta: $("#PreguntaVerdadero"),
             respuesta: false,
-            index: Verdaderos.count()
+            index: Verdaderos.find().count()
 
         });
         event.preventDefault();
@@ -78,7 +78,7 @@ Template.homeAdmin.events({
             opcion3:$("#seleccionOpcion3").val(),
             opcion4:$("#seleccionOpcion4").val(),
             respuesta: Template.instance().answer.get(),
-            index: Selecciones.count()
+            index: Selecciones.find().count()
         });
         Materialize.toast("Pregunta Agregada",2000);
         event.preventDefault();

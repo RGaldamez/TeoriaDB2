@@ -1,6 +1,30 @@
 <template name = "examen">
 {{>navbar}}
 <br><br><br><br><br>
-
+<div class="container"> <h4> Seleccion Multiple</h4></div>
+<br><br><br>
+<div class="container">
+        <class class="row">
+             {{#each preguntaSeleccion}}
+            <div class="col s12 m12 l12">
+                <p> {{pregunta}}</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <p> {{opcion1}}</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <p> {{opcion2}}</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <p> {{opcion3}}</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <p> {{opcion4}}</p>
+            </div>
+            <input type="hidden" value="">
+            
+            {{/each}}
+        </class>
+</div>
 
 </template>

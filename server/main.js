@@ -4,7 +4,7 @@ import { Verdaderos } from '../imports/api/verdadero.js';
 
 Meteor.startup(() => {
   // code to run on server at startup
-  Selecciones.remove({});
-  Verdaderos.remove({});
+  //Selecciones.remove({});
+  //Verdaderos.remove({});
   
 });
