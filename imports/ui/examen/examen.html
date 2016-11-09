@@ -5,10 +5,9 @@
 <br><br><br>
     <div class="container">
         <div class="row">
-            <h5>Pregunta #1</h5>
              {{#each preguntaSeleccion1}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}} </p>
+                <h5>#1</h5><p> {{pregunta}} </p>
             </div>
            <form action="#" id="uno">
                 <p>
@@ -30,10 +29,10 @@
             </form>
             {{/each}}
             
-            <h5>Pregunta #2</h5>
+            
              {{#each preguntaSeleccion2}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}} </p>
+                <h5>#2</h5><p>{{pregunta}} </p>
             </div>
             <form action="#" id="dos">
                 <p>
@@ -55,10 +54,10 @@
             </form>
             {{/each}}
             
-            <h5>Pregunta #3</h5>
+            
              {{#each preguntaSeleccion3}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}} </p>
+               <h5>#3</h5> <p> {{pregunta}} </p>
             </div>
             <form action="#" id="tres">
                 <p>
@@ -80,10 +79,10 @@
             </form>
             {{/each}}
             
-            <h5>Pregunta #4</h5>
+            
              {{#each preguntaSeleccion4}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}} </p>
+                <h5>#4</h5><p> {{pregunta}} </p>
             </div>
             <form action="#" id="cuatro">
                 <p>
@@ -104,11 +103,11 @@
                 </p>
             </form>
             {{/each}}
-            <h5>Pregunta #5</h5>
+            
             
              {{#each preguntaSeleccion5}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}} </p>
+               <h5>#5</h5> <p> {{pregunta}} </p>
             </div>
             <form action="#" id="cinco">
                 <p>
@@ -136,50 +135,95 @@
     <div class="container">
 
         <div class="row">
-            <h5> Pregunta #1</h5>
+            
             {{#each preguntaVerdadero1}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}}</p>
+                <h5>#6</h5><p> {{pregunta}}</p>
             </div>
-            <div class="col s6 m3 l2">
-                
-            </div>
+            <form action="#" id="seis">
+                <p>
+                  <input class="with-gap" name="group6" type="radio" id="opcion61" value="1">
+                  <label for="opcion61">Verdadero</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group6" type="radio" id="opcion62" value="0">
+                  <label for="opcion62">Falso</label>
+                </p>
+            </form>
+
+
+            
             {{/each}}
-            <h5> Pregunta #2</h5>
+            
             {{#each preguntaVerdadero2}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}}</p>
+               <h5>#7</h5> <p> {{pregunta}}</p>
             </div>
-            <div class="col s6 m3 l2">
-                
-            </div>
+
+            <form action="#" id="siete">
+                <p>
+                  <input class="with-gap" name="group7" type="radio" id="opcion71" value="1">
+                  <label for="opcion71">Verdadero</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group7" type="radio" id="opcion72" value="0">
+                  <label for="opcion72">Falso</label>
+                </p>
+            </form>
+            
             {{/each}}
-            <h5> Pregunta #3</h5>
+            
             {{#each preguntaVerdadero3}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}}</p>
+                <h5>#8</h5><p> {{pregunta}}</p>
             </div>
-            <div class="col s6 m3 l2">
-                
-            </div>
+
+            <form action="#" id="ocho">
+                <p>
+                  <input class="with-gap" name="group8" type="radio" id="opcion81" value="1">
+                  <label for="opcion81">Verdadero</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group8" type="radio" id="opcion82" value="0">
+                  <label for="opcion82">Falso</label>
+                </p>
+            </form>
+            
             {{/each}}
-            <h5> Pregunta #4</h5>
+            
             {{#each preguntaVerdadero4}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}}</p>
+               <h5>#9</h5> <p> {{pregunta}}</p>
             </div>
-            <div class="col s6 m3 l2">
-                
-            </div>
+
+            <form action="#" id="nueve">
+                <p>
+                  <input class="with-gap" name="group9" type="radio" id="opcion91" value="1">
+                  <label for="opcion91">Verdadero</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group9" type="radio" id="opcion92" value="0">
+                  <label for="opcion92">Falso</label>
+                </p>
+            </form>
+            
             {{/each}}
-            <h5> Pregunta #5</h5>
             {{#each preguntaVerdadero5}}
             <div class="col s12 m12 l12">
-                <p> {{pregunta}}</p>
+                <h5>#10</h5><p>{{pregunta}}</p>
             </div>
-            <div class="col s6 m3 l2">
-                
-            </div>
+
+            <form action="#" id="diez">
+                <p>
+                  <input class="with-gap" name="group10" type="radio" id="opcion101" value="1">
+                  <label for="opcion101">Verdadero</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group10" type="radio" id="opcion102" value="0">
+                  <label for="opcion102">Falso</label>
+                </p>
+            </form>
+            
             {{/each}}
         </div>
     </div>

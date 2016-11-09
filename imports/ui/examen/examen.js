@@ -119,7 +119,7 @@ Template.examen.helpers({
         try {
             var Doc = Verdaderos.find().fetch()[random]; 
             Template.instance().answersVerdaderos1 = Doc.respuesta;   
-            alert(Doc.respuesta);
+            
         } catch (TypeError) {
              
         }
