@@ -14,11 +14,11 @@ Template.examen.onCreated(function(){
     this.answersSeleccion5 = 0;
    // seleccionEscogida = [0,0,0,0,0,0,0,0,0,0];
     //verdaderoEscogido = [0,0,0,0,0,0,0,0,0,0];
-    this.answersVerdaderos1 = false;
-    this.answersVerdaderos2 = false;
-    this.answersVerdaderos3 = false; 
-    this.answersVerdaderos4 = false;
-    this.answersVerdaderos5 = false;
+    this.answersVerdaderos1 = 0;
+    this.answersVerdaderos2 = 0;
+    this.answersVerdaderos3 = 0; 
+    this.answersVerdaderos4 = 0;
+    this.answersVerdaderos5 = 0;
     Meteor.subscribe("Verdaderos");
     Meteor.subscribe("Selecciones");
 
@@ -116,39 +116,57 @@ Template.examen.helpers({
     
     preguntaVerdadero1: function(){
         var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
-
-        var Doc = Verdaderos.find().fetch()[random]; 
-        Template.instance().answersVerdaderos1 = Doc.respuesta;
+        try {
+            var Doc = Verdaderos.find().fetch()[random]; 
+            Template.instance().answersVerdaderos1 = Doc.respuesta;   
+            alert(Doc.respuesta);
+        } catch (TypeError) {
+             
+        }
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero2: function(){
         var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
-
-        var Doc = Verdaderos.find().fetch()[random]; 
-        Template.instance().answersVerdaderos2 = Doc.respuesta;
+        try {
+            var Doc = Verdaderos.find().fetch()[random]; 
+            Template.instance().answersVerdaderos2 = Doc.respuesta;   
+        } catch (TypeError) {
+             
+        }
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero3: function(){
         var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
-
-        var Doc = Verdaderos.find().fetch()[random]; 
-        Template.instance().answersVerdaderos3 = Doc.respuesta;
+        try {
+            var Doc = Verdaderos.find().fetch()[random]; 
+            Template.instance().answersVerdaderos3 = Doc.respuesta;   
+        } catch (TypeError) {
+             
+        }
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero4: function(){
         var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
-
-        var Doc = Verdaderos.find().fetch()[random]; 
-        Template.instance().answersVerdaderos4 = Doc.respuesta;
+        try {
+            var Doc = Verdaderos.find().fetch()[random]; 
+            Template.instance().answersVerdaderos4 = Doc.respuesta;   
+        } catch (TypeError) {
+             
+        }
         return Verdaderos.find({index:random});
     },
     preguntaVerdadero5: function(){
         var random = Math.floor( Math.random() * (Verdaderos.find({}).count()+1));
-
-        var Doc = Verdaderos.find().fetch()[random]; 
-        Template.instance().answersVerdaderos5 = Doc.respuesta;
+        try {
+            var Doc = Verdaderos.find().fetch()[random]; 
+            Template.instance().answersVerdaderos5 = Doc.respuesta;   
+        } catch (TypeError) {
+             
+        }
         return Verdaderos.find({index:random});
-    },
+    }
+
+    
     /*,
 
     opcion:function(numPregunta,numOpcion){

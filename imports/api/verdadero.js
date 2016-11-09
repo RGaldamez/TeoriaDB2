@@ -8,7 +8,7 @@ Schema.verdadero = new SimpleSchema({
         type: String
     },
     respuesta: {
-        type: Boolean
+        type: Number
     },
     index:{
         type: Number

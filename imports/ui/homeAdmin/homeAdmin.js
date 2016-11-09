@@ -41,44 +41,57 @@ Template.homeAdmin.onRendered(function(){
 
 
 Template.homeAdmin.events({
-    "change #opcionCorrecta": function (event, template) {
+    'change #opcionCorrecta': function (event, template) {
         //Template.instance().color.get();
         Template.instance().answer.set($(event.currentTarget).val());
         
         
     },
     'click #addVerdadero'(event){
-       Verdaderos.insert({
-           pregunta: $("#PreguntaVerdadero").val(),
-           respuesta: true,
-           index:Verdaderos.find().count()
-       });
+       
+        var pregunta= $("#PreguntaVerdadero").val();
+        var respuesta= 1;
+        var index=Verdaderos.find().count();
+        Meteor.call("insertVerdadero", {pregunta,respuesta,index},function(err,res){
+            if(err){
+                console.log(err);
+            }
+        });
+       
        event.preventDefault();
        $("#PreguntaVerdadero").val("");
        Materialize.toast('Pregunta Agregada (True)',2000);
        
     },
     'click #addFalso'(event){
-        Verdaderos.insert({
-            pregunta: $("#PreguntaVerdadero"),
-            respuesta: false,
-            index: Verdaderos.find().count()
-
+        var pregunta= $("#PreguntaVerdadero").val();
+        var respuesta= 0;
+        var index= Verdaderos.find().count();
+        Meteor.call("insertVerdadero",{pregunta,respuesta,index}, function(err,res){
+            if(err){
+                console.log(err);
+            }
         });
+
+        
         event.preventDefault();
         $("#PreguntaVerdadero").val("");
         Materialize.toast('Pregunta Agregada (False)',2000);
         
     },
     'click #agregarSeleccion'(event){
-        Selecciones.insert({
-            pregunta: $("#seleccionPregunta").val(),
-            opcion1:$("#seleccionOpcion1").val(),
-            opcion2:$("#seleccionOpcion2").val(),
-            opcion3:$("#seleccionOpcion3").val(),
-            opcion4:$("#seleccionOpcion4").val(),
-            respuesta: Template.instance().answer.get(),
-            index: Selecciones.find().count()
+        
+            var pregunta= $("#seleccionPregunta").val();
+            var opcion1=$("#seleccionOpcion1").val();
+            var opcion2=$("#seleccionOpcion2").val();
+            var opcion3=$("#seleccionOpcion3").val();
+            var opcion4=$("#seleccionOpcion4").val();
+            var respuesta= Template.instance().answer.get();
+            var index= Selecciones.find().count();
+        Meteor.call("insertSeleccion", {pregunta,opcion1,opcion2,opcion3,opcion4,respuesta,index},function(err,res){
+            if(err){
+                console.log(err);
+            }
         });
         Materialize.toast("Pregunta Agregada",2000);
         event.preventDefault();

@@ -3,8 +3,8 @@
 <br><br><br><br><br>
 <div class="container"> <h4> Seleccion Multiple</h4></div>
 <br><br><br>
-<div class="container">
-        <class class="row">
+    <div class="container">
+        <div class="row">
             <h5>Pregunta #1</h5>
              {{#each preguntaSeleccion1}}
             <div class="col s12 m12 l12">
@@ -99,8 +99,59 @@
                 <p> Opcion 4: {{opcion4}}</p>
             </div>
             {{/each}}
-            
-        </class>
-</div>
+        </div>    
+    </div>
+    <br><br>
+    <div class="container"> <h4> Verdadero/Falso</h4></div>
+    <div class="container">
+
+        <div class="row">
+            <h5> Pregunta #1</h5>
+            {{#each preguntaVerdadero1}}
+            <div class="col s12 m12 l12">
+                <p> {{pregunta}}</p>
+            </div>
+            <div class="col s6 m3 l2">
+                
+            </div>
+            {{/each}}
+            <h5> Pregunta #2</h5>
+            {{#each preguntaVerdadero2}}
+            <div class="col s12 m12 l12">
+                <p> {{pregunta}}</p>
+            </div>
+            <div class="col s6 m3 l2">
+                
+            </div>
+            {{/each}}
+            <h5> Pregunta #3</h5>
+            {{#each preguntaVerdadero3}}
+            <div class="col s12 m12 l12">
+                <p> {{pregunta}}</p>
+            </div>
+            <div class="col s6 m3 l2">
+                
+            </div>
+            {{/each}}
+            <h5> Pregunta #4</h5>
+            {{#each preguntaVerdadero4}}
+            <div class="col s12 m12 l12">
+                <p> {{pregunta}}</p>
+            </div>
+            <div class="col s6 m3 l2">
+                
+            </div>
+            {{/each}}
+            <h5> Pregunta #5</h5>
+            {{#each preguntaVerdadero5}}
+            <div class="col s12 m12 l12">
+                <p> {{pregunta}}</p>
+            </div>
+            <div class="col s6 m3 l2">
+                
+            </div>
+            {{/each}}
+        </div>
+    </div>
 
 </template>
