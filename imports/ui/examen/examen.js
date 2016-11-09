@@ -251,13 +251,14 @@ Template.examen.events({
         var nombre = $("#nombreEstudiante").val();
         alert("Nombre: " + nombre);
         alert("Nota: "+ grades);
+        var nota = grades;
 
         /*Meteor.call("insertEstudiante", {nombre,grades},function(err,res){
             if(err){
                 console.log(err);
             }
         });*/
-        Estudiantes.insert({nombre,grades});
+        Estudiantes.insert({nombre,nota});
     }
 
 });

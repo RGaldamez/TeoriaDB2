@@ -9,7 +9,7 @@ Schema.estudiante = new SimpleSchema({
         type: String
     },
     nota:{
-        type: Number
+        type: String
     }
 
 });
