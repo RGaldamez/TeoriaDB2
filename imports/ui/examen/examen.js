@@ -1,6 +1,7 @@
 import "./examen.html";
 import {Selecciones} from "../../api/seleccion.js";
-import {Verdaderos} from "../../api/verdadero.js"; 
+import {Verdaderos} from "../../api/verdadero.js";
+import {Estudiantes} from "../../api/estudiante.js"; 
 
 //import {Random} from 'meteor/'
 
@@ -19,8 +20,11 @@ Template.examen.onCreated(function(){
     this.answersVerdaderos3 = 0; 
     this.answersVerdaderos4 = 0;
     this.answersVerdaderos5 = 0;
+    this.notaFinal = 0;
     Meteor.subscribe("Verdaderos");
     Meteor.subscribe("Selecciones");
+    Meteor.subscribe("Estudiantes");
+    
 
 
 
@@ -43,6 +47,10 @@ Template.examen.helpers({
         return Selecciones.count();
     },
     */
+    grade:function(){
+        return Template.instance().notaFinal;
+    },
+
     preguntaSeleccion1: function(){        
         var random = Math.floor( Math.random() * (Selecciones.find({}).count()+1));
         try {
@@ -183,6 +191,57 @@ Template.examen.helpers({
         }
     }
     */
+});
+
+Template.examen.events({
+    'click #finalizar'(event){
+        var a1 =$('input:radio[name="group1"]:checked').val();
+        var a2 =$('input:radio[name="group2"]:checked').val();
+        var a3 =$('input:radio[name="group3"]:checked').val();
+        var a4 =$('input:radio[name="group4"]:checked').val();
+        var a5 =$('input:radio[name="group5"]:checked').val();
+        var a6 =$('input:radio[name="group6"]:checked').val();
+        var a7 =$('input:radio[name="group7"]:checked').val();
+        var a8 =$('input:radio[name="group8"]:checked').val();
+        var a9 =$('input:radio[name="group9"]:checked').val();
+        var a10 =$('input:radio[name="group10"]:checked').val();
+
+
+
+        if(a1 == Template.instance().answersSeleccion1 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a2 == Template.instance().answersSeleccion2 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a3 == Template.instance().answersSeleccion3 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a4 == Template.instance().answersSeleccion4 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a5 == Template.instance().answersSeleccion5 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a6 == Template.instance().answersVerdaderos1 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a7 == Template.instance().answersVerdaderos2 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a8 == Template.instance().answersVerdaderos3 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a9 == Template.instance().answersVerdaderos4 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        if(a10 == Template.instance().answersVerdaderos5 ){
+            Template.instance().notaFinal = Template.instance().notaFinal; + 1;
+        }
+        
+        
+    }
+
 });
 
 
