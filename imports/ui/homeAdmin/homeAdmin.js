@@ -21,6 +21,11 @@ Template.homeAdmin.onRendered(function(){
 
 });
 
+Template.homeAdmin.onCreated(function(){
+    Meteor.subscribe("Selecciones");
+    Meteor.subscribe("Verdaderos");
+});
+
 /*Template.homeAdmin.helpers({
     emptyV:function(){
         if(Verdaderos.count() == 0){
@@ -88,6 +93,7 @@ Template.homeAdmin.events({
             var opcion4=$("#seleccionOpcion4").val();
             var respuesta= Template.instance().answer.get();
             var index= Selecciones.find().count();
+            alert(index);
         Meteor.call("insertSeleccion", {pregunta,opcion1,opcion2,opcion3,opcion4,respuesta,index},function(err,res){
             if(err){
                 console.log(err);
